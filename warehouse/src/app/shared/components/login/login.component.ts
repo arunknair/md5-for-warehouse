@@ -1,11 +1,11 @@
 import {Component, OnInit} from '@angular/core';
 import {FormControl, FormGroup} from '@angular/forms';
-import {LoginModel} from '../models/LoginModel';
 import {LoginService} from './login.service';
-import {LoggerService} from '../common/LoggerService/logger.service';
 import {Router} from '@angular/router';
-import {RootService} from '../common/RootService/root.service';
-import {BaseModel} from '../models/BaseModel';
+import {LoggerService} from '../../../common/LoggerService/logger.service';
+import {RootService} from '../../../common/RootService/root.service';
+import {LoginModel} from '../../../models/LoginModel';
+import {BaseModel} from '../../../models/BaseModel';
 
 @Component({
   selector: 'app-login',
@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
         this.log.debug(data.responseMessage);
         this.rootService.loginSuccessfull = true;
         this.log.debug('Redirecting to Dashboard');
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['/main-page/dashboards/v1']);
       })
       .catch((err) => {
         this.log.debug('Error Response from Login Request');

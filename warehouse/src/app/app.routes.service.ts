@@ -7,6 +7,7 @@ import {ModuleWithProviders} from '@angular/core';
 import {NotFoundComponent} from './views/errors/not-found/not-found.component';
 import {Dashboard1Component} from './views/dashboards/dashboard1/dashboard1.component';
 import {LoginComponent} from './shared/components/login/login.component';
+import {MainPageComponent} from './main-page/main-page.component';
 
 
 const routes: Route[] = [
@@ -16,18 +17,24 @@ const routes: Route[] = [
         redirectTo: 'login'
     },
     {
-      path: 'login',
-      component: LoginComponent
+        path: 'login',
+        component: LoginComponent
     },
     {
-        path: 'dashboards',
-        children:
-            [
-                {
-                    path: 'v1',
-                    component: Dashboard1Component
-                },
-            ]
+        path: 'main-page',
+        component: MainPageComponent,
+        children: [
+            {
+                path: 'dashboards',
+                children:
+                    [
+                        {
+                            path: 'v1',
+                            component: Dashboard1Component
+                        },
+                    ]
+            }
+        ]
     },
     {
         path: 'profiles',
