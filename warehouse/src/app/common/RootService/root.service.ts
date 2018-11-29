@@ -1,4 +1,5 @@
 import {Injectable} from '@angular/core';
+import {PrivilegeModel} from '../../models/PrivilegeModel';
 
 
 @Injectable({
@@ -6,7 +7,7 @@ import {Injectable} from '@angular/core';
 })
 export class RootService {
   loginSuccessfull: boolean;
-
+  privilege = new PrivilegeModel();
   constructor() {
   }
 }

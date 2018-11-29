@@ -36,7 +36,7 @@
     "easy-pie-chart": "2.1.x",
     "font-awesome": "4.7.x",
     "fs-extra": "^7.0.1",
-    "hammerjs": "2.0.x",
+    "hammerjs": "^2.0.8",
     "node-sass": "^4.10.0",
     "rxjs": "^6.3.3",
     "screenfull": "3.3.3",

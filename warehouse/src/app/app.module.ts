@@ -16,6 +16,9 @@ import {NavigationModule} from './main-layout/navigation/navigation.module';
 import {LoginModule} from './shared/components/login/login.module';
 import {LoggerService} from './common/LoggerService/logger.service';
 import {MainPageModule} from './main-page/main-page.module';
+import {WhCurrentBookingsModule} from './shared/components/wh-current-bookings/wh-current-bookings.module';
+import {WhFutureBookingsModule} from './shared/components/wh-future-bookings/wh-future-bookings.module';
+import {ReferenceModule} from './shared/components/reference/reference.module';
 
 @NgModule({
     declarations: [
@@ -37,7 +40,10 @@ import {MainPageModule} from './main-page/main-page.module';
         FormsModule,
         ReactiveFormsModule,
         LoginModule,
-        MainPageModule
+        MainPageModule,
+        WhCurrentBookingsModule,
+        WhFutureBookingsModule,
+        ReferenceModule
     ],
     providers: [
         LoggerService

@@ -8,6 +8,9 @@ import {NotFoundComponent} from './views/errors/not-found/not-found.component';
 import {Dashboard1Component} from './views/dashboards/dashboard1/dashboard1.component';
 import {LoginComponent} from './shared/components/login/login.component';
 import {MainPageComponent} from './main-page/main-page.component';
+import {WhCurrentBookingsComponent} from './shared/components/wh-current-bookings/wh-current-bookings.component';
+import {WhFutureBookingsComponent} from './shared/components/wh-future-bookings/wh-future-bookings.component';
+import {ReferenceComponent} from './shared/components/reference/reference.component';
 
 
 const routes: Route[] = [
@@ -25,12 +28,31 @@ const routes: Route[] = [
         component: MainPageComponent,
         children: [
             {
+                path: '',
+                redirectTo: 'dashboards',
+                pathMatch: 'full'
+            },
+            {
                 path: 'dashboards',
+                component: Dashboard1Component,
                 children:
                     [
                         {
-                            path: 'v1',
-                            component: Dashboard1Component
+                            path: '',
+                            redirectTo: 'warehouse-current-bookings',
+                            pathMatch: 'full'
+                        },
+                        {
+                            path: 'warehouse-current-bookings',
+                            component: WhCurrentBookingsComponent
+                        },
+                        {
+                            path: 'warehouse-future-bookings',
+                            component: WhFutureBookingsComponent
+                        },
+                        {
+                            path: 'reference',
+                            component: ReferenceComponent
                         },
                     ]
             }
